@@ -4,9 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Commits</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="DY.css">
 </head>
-<body>
-    
+<>
+
+<aside class="sidebar">
+  <div class="logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 18V8l16-4v10" stroke="#ec1a6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="2.4" fill="#ec1a6f"/><circle cx="20" cy="16" r="2.4" fill="#ec1a6f"/></svg>
+    AuraSound
+  </div>
+
+  <button class="nav-item activo"><span class="icono">🏠</span> Inicio</button>
+  <button class="nav-item"><span class="icono">🧭</span> Descubrir</button>
+  <button class="nav-item"><span class="icono">📻</span> Emisoras</button>
+  <button class="nav-item"><span class="icono">🤍</span> Favoritos</button>
+
+  <div class="pie">Concurso Web 2026</div>
+</aside>
+
+<main class="contenido">
+  <div class="barra-superior">
+    <div class="buscador">
+      <span class="icono-buscar">🔍</span>
+      <input type="text" placeholder="Buscar canción o artista...">
+    </div>
+    <div class="acciones-superior">
+      <span>🔔</span>
+      <div class="avatar"></div>
+    </div>
+  </div>
+
+  <section class="destacado">
+    <div class="ecualizador">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <span class="insignia">Ecualizador en tiempo real</span>
+    <h1 id="titulo-destacado">Synthwave Pulse</h1>
+    <div class="autor" id="autor-destacado">Neon Skyline</div>
+  </section>
+
+  <h2 class="titulo-lista">Lista de reproducción</h2>
+
+  <div id="lista-canciones">
+    <!-- Cambia título, artista y "src" por tus archivos reales en musica/ -->
+    <div class="fila-cancion activa" data-titulo="Synthwave Pulse" data-artista="Neon Skyline" data-src="musica/cancion1.mp3">
+      <div class="portada">🎵</div>
+      <div class="info-cancion">
+        <div class="titulo-cancion">Synthwave Pulse</div>
+        <div class="artista-cancion">Neon Skyline</div>
+      </div>
+      <button class="boton-fila">❚❚</button>
+    </div>
+
+    <div class="fila-cancion" data-titulo="Cybernetic Dreams" data-artista="Aura Tech" data-src="musica/cancion2.mp3">
+      <div class="portada">🎵</div>
+      <div class="info-cancion">
+        <div class="titulo-cancion">Cybernetic Dreams</div>
+        <div class="artista-cancion">Aura Tech</div>
+      </div>
+      <button class="boton-fila">▶</button>
+    </div>
+
+    <div class="fila-cancion" data-titulo="Midnight Drive" data-artista="Retro Wave" data-src="musica/cancion3.mp3">
+      <div class="portada">🎵</div>
+      <div class="info-cancion">
+        <div class="titulo-cancion">Midnight Drive</div>
+        <div class="artista-cancion">Retro Wave</div>
+      </div>
+      <button class="boton-fila">▶</button>
+    </div>
+  </div>
+</main>
+
+<footer class="reproductor-fijo">
+  <div class="info-reproductor">
+    <div class="portada">🎵</div>
+    <div class="textos">
+      <div class="titulo-cancion" id="pie-titulo">Synthwave Pulse</div>
+      <div class="artista-cancion" id="pie-artista">Neon Skyline</div>
+    </div>
+  </div>
+
+  <div class="controles-centro">
+    <div class="botones-control">
+      <button id="btn-aleatorio">🔀</button>
+      <button id="btn-anterior">⏮</button>
+      <button id="btn-play" class="boton-play">▶</button>
+      <button id="btn-siguiente">⏭</button>
+      <button id="btn-repetir">🔁</button>
+    </div>
+    <div class="barra-progreso">
+      <span id="tiempo-actual">0:00</span>
+      <input type="range" id="barra-tiempo" value="0" min="0" max="100">
+      <span id="tiempo-total">0:00</span>
+    </div>
+  </div>
+
+  <div class="controles-derecha">
+    <button id="btn-descargar" title="Descargar">⬇</button>
+    <button id="btn-volumen">🔊</button>
+    <input type="range" id="control-volumen" min="0" max="1" step="0.01" value="1">
+  </div>
+</footer>
+
+<audio id="audio-principal"></audio>
+
+<script src="Logica.js"></script>
+
 </body>
 </html>
